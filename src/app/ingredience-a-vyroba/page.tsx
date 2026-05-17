@@ -6,7 +6,12 @@
 import type { Metadata } from "next";
 import s from "../styles.module.css";
 import { StickyChrome, Footer } from "../Chrome";
-import { IconCheck } from "../icons";
+import {
+  IconCheck,
+  IconBotanicalBranch,
+  IconBotanicalLeaf,
+  IconBotanicalSprig,
+} from "../icons";
 import {
   INGREDIENTS,
   INGREDIENT_CATEGORIES,
@@ -79,8 +84,62 @@ export default function IngredientsPage() {
       <StickyChrome active="ingredience" />
 
       {/* HERO */}
-      <section className={s.pageHero}>
-        <div className={s.container}>
+      <section
+        className={s.pageHero}
+        style={{ position: "relative", overflow: "hidden" }}
+      >
+        <IconBotanicalSprig
+          size={200}
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            top: 40,
+            left: -40,
+            color: "var(--champagne-gold)",
+            opacity: 0.18,
+            pointerEvents: "none",
+          }}
+        />
+        <IconBotanicalBranch
+          size={260}
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            top: 20,
+            right: -60,
+            color: "var(--botanical-olive)",
+            opacity: 0.15,
+            pointerEvents: "none",
+            transform: "rotate(15deg)",
+          }}
+        />
+        <IconBotanicalLeaf
+          size={140}
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            bottom: 20,
+            left: "10%",
+            color: "var(--botanical-olive)",
+            opacity: 0.14,
+            pointerEvents: "none",
+            transform: "rotate(-25deg)",
+          }}
+        />
+        <IconBotanicalSprig
+          size={120}
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            bottom: 40,
+            right: "12%",
+            color: "var(--champagne-gold)",
+            opacity: 0.18,
+            pointerEvents: "none",
+            transform: "rotate(180deg)",
+          }}
+        />
+        <div className={s.container} style={{ position: "relative", zIndex: 1 }}>
           <div className={s.pageHeroCentered}>
             <span className={s.eyebrow}>Ingredience a výroba</span>
             <h1 className={s.heroTitle}>
@@ -103,8 +162,62 @@ export default function IngredientsPage() {
       </section>
 
       {/* PILÍŘE */}
-      <section className={`${s.section} ${s.sectionIvory}`}>
-        <div className={s.container}>
+      <section
+        className={`${s.section} ${s.sectionIvory}`}
+        style={{ position: "relative", overflow: "hidden" }}
+      >
+        <IconBotanicalSprig
+          size={220}
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            top: 30,
+            left: -60,
+            color: "var(--champagne-gold)",
+            opacity: 0.16,
+            pointerEvents: "none",
+          }}
+        />
+        <IconBotanicalBranch
+          size={260}
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            top: 80,
+            right: -70,
+            color: "var(--botanical-olive)",
+            opacity: 0.14,
+            pointerEvents: "none",
+            transform: "rotate(20deg)",
+          }}
+        />
+        <IconBotanicalLeaf
+          size={160}
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            bottom: 40,
+            left: "12%",
+            color: "var(--botanical-olive)",
+            opacity: 0.12,
+            pointerEvents: "none",
+            transform: "rotate(-15deg)",
+          }}
+        />
+        <IconBotanicalSprig
+          size={140}
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            bottom: 60,
+            right: "8%",
+            color: "var(--champagne-gold)",
+            opacity: 0.18,
+            pointerEvents: "none",
+            transform: "rotate(180deg)",
+          }}
+        />
+        <div className={s.container} style={{ position: "relative", zIndex: 1 }}>
           <div className={s.sectionHeader}>
             <span className={s.eyebrowGold}>Čtyři pilíře receptur</span>
             <h2 className={s.h2Display}>
@@ -123,8 +236,86 @@ export default function IngredientsPage() {
       </section>
 
       {/* VÝROBA */}
-      <section className={`${s.section} ${s.sectionBone}`}>
-        <div className={s.container}>
+      <section
+        className={`${s.section} ${s.sectionBone}`}
+        style={{ position: "relative", overflow: "hidden" }}
+      >
+        <svg
+          aria-hidden="true"
+          viewBox="0 0 1000 500"
+          preserveAspectRatio="xMidYMid slice"
+          style={{
+            position: "absolute",
+            inset: 0,
+            width: "100%",
+            height: "100%",
+            opacity: 0.08,
+            color: "var(--dark-moss)",
+            pointerEvents: "none",
+          }}
+        >
+          <defs>
+            <pattern
+              id="worldDots"
+              x="0"
+              y="0"
+              width="12"
+              height="12"
+              patternUnits="userSpaceOnUse"
+            >
+              <circle cx="2" cy="2" r="1.4" fill="currentColor" />
+            </pattern>
+            <mask id="worldMask">
+              <rect width="1000" height="500" fill="black" />
+              {/* Severní Amerika */}
+              <path
+                d="M120,110 Q150,80 200,90 Q240,95 270,120 Q280,150 260,180 Q230,220 200,230 Q170,235 150,220 Q120,200 110,170 Q105,140 120,110 Z"
+                fill="white"
+              />
+              <path
+                d="M180,240 Q200,250 220,275 Q225,300 215,315 Q200,325 185,318 Q170,305 168,285 Q170,255 180,240 Z"
+                fill="white"
+              />
+              {/* Jižní Amerika */}
+              <path
+                d="M260,300 Q280,295 295,310 Q310,340 310,375 Q305,410 285,430 Q265,440 255,425 Q245,400 248,370 Q252,335 260,300 Z"
+                fill="white"
+              />
+              {/* Evropa */}
+              <path
+                d="M470,120 Q500,105 535,115 Q560,130 555,155 Q540,175 510,180 Q480,180 465,165 Q455,145 470,120 Z"
+                fill="white"
+              />
+              {/* Afrika */}
+              <path
+                d="M490,200 Q525,190 560,205 Q580,235 580,275 Q575,320 555,355 Q535,380 510,380 Q485,370 475,340 Q465,300 470,260 Q478,225 490,200 Z"
+                fill="white"
+              />
+              {/* Asie */}
+              <path
+                d="M580,110 Q650,95 740,110 Q820,125 870,155 Q890,180 870,205 Q820,225 740,225 Q670,225 610,215 Q575,200 575,170 Q570,135 580,110 Z"
+                fill="white"
+              />
+              {/* Indie */}
+              <path
+                d="M650,225 Q680,225 690,250 Q695,275 680,295 Q665,300 655,285 Q645,260 650,225 Z"
+                fill="white"
+              />
+              {/* Austrálie */}
+              <path
+                d="M790,335 Q830,325 870,335 Q890,355 880,380 Q855,395 820,395 Q790,390 780,370 Q780,350 790,335 Z"
+                fill="white"
+              />
+            </mask>
+          </defs>
+          <rect
+            width="1000"
+            height="500"
+            fill="url(#worldDots)"
+            mask="url(#worldMask)"
+          />
+        </svg>
+        <div className={s.container} style={{ position: "relative", zIndex: 1 }}>
           <div className={s.twoCol}>
             <div>
               <span className={s.eyebrow}>Výrobní proces</span>

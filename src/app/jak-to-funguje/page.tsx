@@ -218,6 +218,20 @@ export default function HowItWorksPage() {
             Večerní rituál pleť očistí, hydratuje a uzavře výživnějším nočním
             krokem.
           </p>
+
+          <div
+            style={{
+              marginTop: 56,
+              borderRadius: "var(--card-radius-lg)",
+              overflow: "hidden",
+            }}
+          >
+            <img
+              src="/v3/decor/pouzitiranovecer.png"
+              alt="Použití ranního a večerního rituálu krok za krokem"
+              style={{ width: "100%", height: "auto", display: "block" }}
+            />
+          </div>
         </div>
       </section>
 
@@ -253,17 +267,31 @@ export default function HowItWorksPage() {
               </ul>
             </div>
           </div>
+
+          <div
+            style={{
+              marginTop: 56,
+              borderRadius: "var(--card-radius-lg)",
+              overflow: "hidden",
+            }}
+          >
+            <img
+              src="/v3/decor/pouzitiranovecer.png"
+              alt="Použití ranního a večerního rituálu krok za krokem"
+              style={{ width: "100%", height: "auto", display: "block" }}
+            />
+          </div>
         </div>
       </section>
 
       {/* ===== JAK ZAČÍT ===== */}
       <section className={`${s.section} ${s.sectionIvory}`}>
         <div className={s.container}>
-          <div className={s.sectionHeader}>
+          <div className={s.sectionHeader} style={{ marginBottom: 72 }}>
             <span className={s.eyebrowGold}>Jak začít</span>
             <h2 className={s.h2Display}>Tři jednoduché cesty.</h2>
           </div>
-          <div className={s.choiceGrid}>
+          <div className={s.choiceGrid} style={{ marginTop: 32 }}>
             <article className={`${s.choiceCard} ${s.choiceCardPrimary}`}>
               <span className={s.choiceBadge}>Doporučujeme</span>
               <span className={s.choiceLabel}>Zkouším poprvé</span>

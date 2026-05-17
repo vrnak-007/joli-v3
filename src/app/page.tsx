@@ -193,20 +193,18 @@ export default function HomePage() {
         />
         <div className={s.container} style={{ position: "relative", zIndex: 1 }}>
           <div className={s.choiceHeader}>
-            <span className={s.eyebrow}>Tři cesty, jeden rituál</span>
-            <h2 className={s.h2Display}>Vyberte si jednu ze tří cest.</h2>
+            <h2 className={s.h2Display}>Vyberte si, jak chcete začít.</h2>
             <p className={s.lead}>
-              Nemusíte znát všechny produkty. Stačí vybrat, kde právě jste.
+              Nemusíte hned znát všechny produkty. Vyberte cestu, která vám
+              dává smysl už dnes.
             </p>
           </div>
 
           <div className={s.choiceGrid}>
             {/* Card 1 — Travel (PRIMARY) */}
             <article className={`${s.choiceCard} ${s.choiceCardPrimary}`}>
-              <span className={s.choiceBadge}>
-                Doporučujeme pro první nákup
-              </span>
-              <span className={s.choiceLabel}>Zkouším poprvé</span>
+              <span className={s.choiceBadge}>Doporučujeme</span>
+              <span className={s.choiceLabel}>Začínám poprvé</span>
               <h3 className={s.choiceTitle}>Travel Luxe Set</h3>
               <p className={s.choiceCardHook}>Začněte tady.</p>
               <div className={s.choiceVisual}>
@@ -232,7 +230,7 @@ export default function HomePage() {
               <span className={`${s.choiceBadge} ${s.choiceBadgeGold}`}>
                 Úspora 3 750 Kč
               </span>
-              <span className={s.choiceLabel}>Chci všechno</span>
+              <span className={s.choiceLabel}>Chci kompletní péči</span>
               <h3 className={s.choiceTitle}>Generation Perfect Complete</h3>
               <div className={s.choiceVisual}>
                 <img
@@ -256,8 +254,8 @@ export default function HomePage() {
 
             {/* Card 3 — Consultation */}
             <article className={s.choiceCard}>
-              <span className={s.choiceLabel}>Nevím</span>
-              <h3 className={s.choiceTitle}>Poradíme vám</h3>
+              <span className={s.choiceLabel}>Nevím, co vybrat</span>
+              <h3 className={s.choiceTitle}>Osobní doporučení</h3>
               <div className={s.choiceVisual}>
                 <img
                   src="/v3/ritual/ritual_morning_visual.jpg"
@@ -270,7 +268,7 @@ export default function HomePage() {
               </p>
               <div className={s.choiceCardCta}>
                 <a className={s.btnSecondary} href="/poradit-s-vyberem">
-                  Chci poradit
+                  Vybrat pomocí konzultace
                 </a>
               </div>
             </article>
@@ -298,12 +296,11 @@ export default function HomePage() {
         />
         <div className={s.container} style={{ position: "relative", zIndex: 1 }}>
           <div className={s.sectionHeader}>
-            <span className={s.eyebrowGold}>Rituál ráno a večer</span>
             <h2 className={s.h2Display}>
-              Ráno čtyři kroky. Večer čtyři kroky.
+              Jeden rituál. Dvě jednoduchá pořadí.
             </h2>
             <p className={s.lead}>
-              Pořadí je dané. Nemusíte nic kombinovat.
+              Ranní pořadí a večerní pořadí. Stejný řád, jiný cíl pro pleť.
             </p>
           </div>
 
