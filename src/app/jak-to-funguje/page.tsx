@@ -267,20 +267,6 @@ export default function HowItWorksPage() {
               </ul>
             </div>
           </div>
-
-          <div
-            style={{
-              marginTop: 56,
-              borderRadius: "var(--card-radius-lg)",
-              overflow: "hidden",
-            }}
-          >
-            <img
-              src="/v3/decor/pouzitiranovecer.png"
-              alt="Použití ranního a večerního rituálu krok za krokem"
-              style={{ width: "100%", height: "auto", display: "block" }}
-            />
-          </div>
         </div>
       </section>
 

@@ -6,7 +6,25 @@
 import type { Metadata } from "next";
 import s from "../styles.module.css";
 import { StickyChrome, Footer } from "../Chrome";
-import { IconCheck, IconArrowRight } from "../icons";
+import {
+  IconCheck,
+  IconArrowRight,
+  IconHandshake,
+  IconBookOpen,
+  IconChair,
+  IconFace,
+  IconBottle,
+  IconShoppingBag,
+  IconGrowth,
+  IconPeopleHeart,
+  IconDiscount,
+  IconLightning,
+  IconHome,
+  IconMegaphone,
+  IconLocationPartner,
+  IconGift,
+  IconDiamond,
+} from "../icons";
 
 export const metadata: Metadata = {
   title: "Salony | J.OLI Origins",
@@ -29,21 +47,135 @@ const ritualSteps = [
   { no: "04", t: "Follow-up", d: "Návaznost na další návštěvu a opakované nákupy." },
 ];
 
+const businessFlow = [
+  {
+    no: "1",
+    title: "Partnerství & onboarding",
+    Icon: IconHandshake,
+    text: "Vyberete si úroveň spolupráce. Provedeme vás celým procesem a připravíme váš salon na úspěch.",
+  },
+  {
+    no: "2",
+    title: "Školení & protokol",
+    Icon: IconBookOpen,
+    text: "Získáte školení, detailní protokoly ošetření a všechny materiály pro váš tým.",
+  },
+  {
+    no: "3",
+    title: "Zavedení do nabídky salonu",
+    Icon: IconChair,
+    text: "Zařadíte rituály do své nabídky, nastavíme ceny a připravíme komunikaci.",
+  },
+  {
+    no: "4",
+    title: "Salonní rituál pro klientku",
+    Icon: IconFace,
+    text: "Klientka zažije viditelný efekt, smyslový zážitek a profesionální péči J.OLI Origins.",
+  },
+  {
+    no: "5",
+    title: "Doporučení domácí péče",
+    Icon: IconBottle,
+    text: "Doporučíte jí 5krokový rituál na doma. Dostane pracovní list a doporučený postup.",
+  },
+  {
+    no: "6",
+    title: "Prodej na doma",
+    Icon: IconShoppingBag,
+    text: "Klientka nakoupí produkty domů. Vy získáte zisk z prodeje.",
+  },
+  {
+    no: "7",
+    title: "Návrat & růst dlouhodobě",
+    Icon: IconGrowth,
+    text: "Klientka se vrací na další rituály, rozšiřuje péči a doporučuje vás dál. Váš salon roste.",
+  },
+];
+
+const businessBenefits = [
+  {
+    Icon: IconPeopleHeart,
+    title: "Komise nebo nákup",
+    text: "Zvolte si model, který vám vyhovuje. Produkty můžete mít na komisi nebo za zvýhodněné partnerské ceny.",
+  },
+  {
+    Icon: IconDiscount,
+    title: "Velké rabaty",
+    text: "Atraktivní rabatové podmínky zajišťují vysokou marži a motivují kosmetičku k aktivnímu prodeji.",
+  },
+  {
+    Icon: IconLightning,
+    title: "Funguje okamžitě",
+    text: "Viditelné výsledky po ošetření budují důvěru a přirozeně přivádí klientky zpět.",
+  },
+  {
+    Icon: IconHome,
+    title: "Prodej na doma",
+    text: "Domácí rituál prodlužuje efekt ošetření a přináší salonu opakovaný příjem z prodeje.",
+  },
+  {
+    Icon: IconMegaphone,
+    title: "Kampaně na podporu salonů",
+    text: "Pravidelné kampaně a obsah směřují nové klientky k vám — online i offline.",
+  },
+  {
+    Icon: IconLocationPartner,
+    title: "Cílem je partnerský salon",
+    text: "Žádné slevy na e-shopu. Neparazitujeme na salonech, ale budujeme síť silných partnerství.",
+  },
+  {
+    Icon: IconGift,
+    title: "Dárek ke každé objednávce",
+    text: "Vždy získáte dárek, který můžete předat své klientce.",
+  },
+  {
+    Icon: IconDiamond,
+    title: "Exkluzivní produkty navíc",
+    text: "Signature partneři získávají prémiové produkty a rituály, které žádný jiný salon v okolí nenabízí. Vaše konkurenční výhoda začíná tady.",
+  },
+];
+
 const partners = [
   {
     name: "Starter",
-    tagline: "První zařazení J.OLI do salonu.",
-    for: "Pro salony, které značku zkoušejí poprvé.",
+    intro: "Pro salon, který chce značku nejdřív otestovat.",
+    condition:
+      "Pokud chcete vyzkoušet, zda J.OLI klientkám sedí, bez velkého vstupního závazku.",
+    features: [
+      "Základní profesionální produkty",
+      "Discovery / Travel Luxe Sety pro klientky",
+      "Online školení a digitální materiály",
+      "Vstupní rozsah: nižší — k upřesnění individuálně",
+    ],
+    recommended: false,
   },
   {
     name: "Ritual Partner",
-    tagline: "Stabilní spolupráce.",
-    for: "Pro salony, které již s J.OLI pracují a chtějí prohloubit nabídku.",
+    intro: "Pro salon, který chce J.OLI aktivně zařadit do nabídky.",
+    condition:
+      "Pokud chcete plnou retailovou nabídku, materiály pro klientky a aktivní podporu prodeje.",
+    features: [
+      "Profesionální SPA balení (No1, No2 500 ml)",
+      "Retail sortiment + testery pro klientky",
+      "Online + osobní školení, materiály, podpora prodeje",
+      "Zařazení na mapu partnerů J.OLI",
+      "Vstupní rozsah: střední — k upřesnění individuálně",
+    ],
+    recommended: true,
   },
   {
     name: "Signature Salon",
-    tagline: "Vlajková spolupráce.",
-    for: "Pro salony zaměřené na prémiový segment a dlouhodobou klientelu.",
+    intro: "Pro salon, který chce lokální exkluzivitu a odlišení.",
+    condition:
+      "Pokud chcete exkluzivní produkty, individuální podmínky a vyšší úroveň podpory.",
+    features: [
+      "Exkluzivní produkty dostupné pouze pro Signature salony",
+      "Signature Exclusive Ritual v nabídce salonu",
+      "Individuální obchodní podmínky a prioritní podpora",
+      "Školení na místě / na míru a launch podpora",
+      "Označení salonu jako Signature partnera J.OLI",
+    ],
+    recommended: false,
   },
 ];
 
@@ -149,6 +281,76 @@ export default function SalonsPage() {
         </div>
       </section>
 
+      {/* BUSINESS MODEL */}
+      <section className={`${s.section} ${s.sectionBone}`}>
+        <div className={s.container}>
+          <div className={s.bizHero}>
+            <div className={s.bizHeroCopy}>
+              <span className={s.eyebrowGold}>Business model</span>
+              <h2 className={s.bizHeroTitle}>
+                Partnerství, které vám přináší{" "}
+                <em>více prodeje, klientek a růstu.</em>
+              </h2>
+              <p className={s.bodyCopy}>
+                J.OLI Origins vám dává kompletní systém, který funguje v
+                praxi. Vy se soustředíte na své klientky. My vám dodáme
+                nástroje, podporu a strategii.
+              </p>
+            </div>
+            <div className={s.bizHeroVisual}>
+              <img
+                src="/v3/salons/salon_hero_desktop.jpg"
+                alt="Salon J.OLI Origins"
+              />
+            </div>
+          </div>
+
+          <div className={s.bizFlow}>
+            <div className={s.bizFlowLabel}>
+              <span className={s.bizFlowLabelLine} aria-hidden="true" />
+              Jak to funguje — od partnerství k růstu vašeho salonu
+              <span className={s.bizFlowLabelLine} aria-hidden="true" />
+            </div>
+            <div className={s.bizFlowSteps}>
+              {businessFlow.map((step) => (
+                <div key={step.no} className={s.bizFlowStep}>
+                  <span className={s.bizFlowNo}>{step.no}</span>
+                  <h4 className={s.bizFlowTitle}>{step.title}</h4>
+                  <span className={s.bizFlowIcon}>
+                    <step.Icon size={26} />
+                  </span>
+                  <p className={s.bizFlowText}>{step.text}</p>
+                </div>
+              ))}
+              <div className={`${s.bizFlowStep} ${s.bizFlowResult}`}>
+                <span className={s.bizFlowResultLabel}>Výsledek:</span>
+                <strong className={s.bizFlowResultText}>
+                  Více prodeje, více klientek, vyšší zisk.
+                </strong>
+                <span className={s.bizFlowIcon}>
+                  <IconPeopleHeart size={26} />
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div className={s.bizBenefits}>
+            <div className={s.bizBenefitsHeader}>Co vám přinášíme</div>
+            <div className={s.bizBenefitsGrid}>
+              {businessBenefits.map((b) => (
+                <div key={b.title} className={s.bizBenefit}>
+                  <span className={s.bizBenefitIcon}>
+                    <b.Icon size={24} />
+                  </span>
+                  <h5 className={s.bizBenefitTitle}>{b.title}</h5>
+                  <p className={s.bizBenefitText}>{b.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* PARTNERSKÉ MODELY */}
       <section className={`${s.section} ${s.sectionBone}`}>
         <div className={s.container}>
@@ -160,26 +362,40 @@ export default function SalonsPage() {
               kontaktu podle profilu salonu.
             </p>
           </div>
-          <div className={s.choiceGrid} style={{ marginTop: 48 }}>
-            {partners.map((p, idx) => (
+          <div className={s.partnerGrid}>
+            {partners.map((p) => (
               <article
                 key={p.name}
                 className={
-                  idx === 1
-                    ? `${s.choiceCard} ${s.choiceCardPrimary}`
-                    : s.choiceCard
+                  p.recommended
+                    ? `${s.partnerCard} ${s.partnerCardDark}`
+                    : s.partnerCard
                 }
               >
-                {idx === 1 && (
-                  <span className={s.choiceBadge}>Nejčastější volba</span>
+                {p.recommended && (
+                  <span className={s.partnerBadge}>Doporučeno</span>
                 )}
-                <span className={s.choiceLabel}>Úroveň {idx + 1}</span>
-                <h3 className={s.choiceTitle}>{p.name}</h3>
-                <p className={s.choiceCardHook}>{p.tagline}</p>
-                <p className={s.choiceDescription}>{p.for}</p>
-                <div className={s.choiceCardCta}>
-                  <a className={s.btnSecondary} href="#kontakt">
-                    Mám zájem <IconArrowRight size={14} />
+                <h3 className={s.partnerTitle}>{p.name}</h3>
+                <p className={s.partnerIntro}>{p.intro}</p>
+                <p className={s.partnerCondition}>{p.condition}</p>
+                <ul className={s.partnerFeatures}>
+                  {p.features.map((f) => (
+                    <li key={f}>
+                      <IconCheck size={14} />
+                      <span>{f}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className={s.partnerCardCta}>
+                  <a
+                    className={
+                      p.recommended
+                        ? `${s.partnerCtaBtn} ${s.partnerCtaBtnGold}`
+                        : s.partnerCtaBtn
+                    }
+                    href="#kontakt"
+                  >
+                    Více informací <IconArrowRight size={14} />
                   </a>
                 </div>
               </article>

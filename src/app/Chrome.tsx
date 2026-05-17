@@ -2,6 +2,7 @@
  * J.OLI ORIGINS v3 — Chrome (top bar + header + footer)
  * Botanical Prestige / Quiet Luxury
  */
+"use client";
 
 import * as React from "react";
 import s from "./styles.module.css";
@@ -59,6 +60,22 @@ export function MainHeader({ active = null }: { active?: ActiveNav }) {
     { id: "salony", href: "/salony", label: "Salony" },
   ];
 
+  const [menuOpen, setMenuOpen] = React.useState(false);
+
+  React.useEffect(() => {
+    if (!menuOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMenuOpen(false);
+    };
+    document.addEventListener("keydown", onKey);
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prev;
+    };
+  }, [menuOpen]);
+
   return (
     <header className={s.header}>
       <div className={`${s.container} ${s.headerInner}`}>
@@ -107,13 +124,68 @@ export function MainHeader({ active = null }: { active?: ActiveNav }) {
           </a>
           <button
             className={`${s.iconBtn} ${s.hamburger}`}
-            aria-label="Menu"
+            aria-label={menuOpen ? "Zavřít menu" : "Otevřít menu"}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-menu"
             type="button"
+            onClick={() => setMenuOpen((v) => !v)}
           >
             <IconMenu size={20} />
           </button>
         </div>
       </div>
+
+      {menuOpen && (
+        <>
+          <div
+            className={s.mobileMenuOverlay}
+            onClick={() => setMenuOpen(false)}
+            aria-hidden="true"
+          />
+          <div
+            id="mobile-menu"
+            className={s.mobileMenu}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Mobilní navigace"
+          >
+            <nav className={s.mobileMenuNav} aria-label="Mobilní">
+              {links.map((l) => {
+                const isActive = active === l.id;
+                return (
+                  <a
+                    key={l.id ?? l.href}
+                    href={l.href}
+                    className={`${s.mobileMenuLink}${
+                      isActive ? " " + s.mobileMenuLinkActive : ""
+                    }`}
+                    aria-current={isActive ? "page" : undefined}
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    {l.label}
+                  </a>
+                );
+              })}
+            </nav>
+            <div className={s.mobileMenuCtas}>
+              <a
+                className={s.btnPrimary}
+                href="/produkty/travel-luxe-set"
+                onClick={() => setMenuOpen(false)}
+              >
+                Začít Travel Setem
+              </a>
+              <a
+                className={s.btnSecondary}
+                href="/poradit-s-vyberem"
+                onClick={() => setMenuOpen(false)}
+              >
+                Chci poradit
+              </a>
+            </div>
+          </div>
+        </>
+      )}
     </header>
   );
 }

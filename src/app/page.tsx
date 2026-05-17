@@ -124,6 +124,7 @@ export default function HomePage() {
       {/* ===== 1. HERO ===== */}
       <section className={s.hero}>
         <div className={s.container}>
+          <div className={s.heroPhoto} aria-hidden="true" />
           <div className={s.heroGrid}>
             <div className={s.heroCopy}>
               <span className={s.eyebrow}>Longevity rituál</span>
