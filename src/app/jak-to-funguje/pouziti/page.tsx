@@ -104,9 +104,9 @@ const eveningSteps: Step[] = [
     goal: "Dodat pleti hloubkovou hydrataci.",
   },
   {
-    no: "05",
+    no: "04",
     category: "Noční obnova",
-    product: "No5 Noční regenerační sérum",
+    product: "No4 Noční regenerační sérum",
     img: "/v3/products/no4-night.jpg",
     amount: "malé množství",
     how: "Naneste jako poslední krok. Jemně vklepejte a nechte působit přes noc.",
@@ -125,7 +125,7 @@ const amounts = [
   { p: "No2 Tonikum", a: "3–5 stříknutí" },
   { p: "No3 Hydratace", a: "2–3 dávky" },
   { p: "No4 Denní sérum", a: "2–3 kapky" },
-  { p: "No5 Noční sérum", a: "malé množství" },
+  { p: "No4 Noční sérum", a: "malé množství" },
 ];
 
 const avoid = [
@@ -145,7 +145,7 @@ const quickRoutines = [
   },
   {
     title: "Rychlý večer",
-    seq: "01 → 02 → 03 → 05",
+    seq: "01 → 02 → 03 → 04",
     note: "Čistý základ, hydratace a výživný závěr.",
   },
 ];
@@ -227,7 +227,7 @@ export default function HowToUseDetailPage() {
             <span className={s.eyebrowGold}>
               <IconMoon size={14} style={{ marginRight: 6 }} /> Večerní rituál
             </span>
-            <span className={s.applyFlow}>01 → 02 → 03 → 05</span>
+            <span className={s.applyFlow}>01 → 02 → 03 → 04</span>
           </div>
           <div className={s.applyTable}>
             {eveningSteps.map((step) => (
