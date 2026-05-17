@@ -232,6 +232,16 @@ export default function HowItWorksPage() {
               style={{ width: "100%", height: "auto", display: "block" }}
             />
           </div>
+
+          <div style={{ textAlign: "center", marginTop: 40 }}>
+            <a
+              className={s.btnPrimary}
+              href="/jak-to-funguje/pouziti"
+              style={{ padding: "0 36px" }}
+            >
+              Detail aplikace <IconArrowRight size={14} />
+            </a>
+          </div>
         </div>
       </section>
 

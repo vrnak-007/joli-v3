@@ -3327,3 +3327,283 @@
   color: var(--color-text-subtle, #6b6b5e);
   margin: 0;
 }
+
+/* ---------- Detail aplikace (/jak-to-funguje/pouziti) ---------- */
+.applyHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--color-border-soft, rgba(52, 58, 40, 0.18));
+  margin-bottom: 8px;
+}
+
+.applyFlow {
+  font-family: var(--font-display), serif;
+  font-style: italic;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  color: var(--champagne-gold);
+}
+
+.applyTable {
+  display: flex;
+  flex-direction: column;
+}
+
+.applyRow {
+  display: grid;
+  grid-template-columns: 60px 100px 1.4fr 0.9fr 2.2fr 1.7fr;
+  gap: 28px;
+  align-items: center;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--color-border-soft, rgba(52, 58, 40, 0.14));
+}
+
+.applyRow:last-child {
+  border-bottom: none;
+}
+
+.applyNo {
+  font-family: var(--font-display), serif;
+  font-size: clamp(28px, 3vw, 38px);
+  line-height: 1;
+  color: var(--soft-charcoal);
+  letter-spacing: 0.02em;
+}
+
+.sectionCharcoal .applyNo {
+  color: var(--bone-white);
+}
+
+.applyThumb {
+  width: 100px;
+  aspect-ratio: 3 / 4;
+  background: rgba(246, 243, 237, 0.7);
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sectionCharcoal .applyThumb {
+  background: rgba(246, 243, 237, 0.06);
+}
+
+.applyThumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+.sectionCharcoal .applyThumb img {
+  mix-blend-mode: normal;
+}
+
+.applyCell {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.applyCellLabel {
+  font-family: var(--font-body), sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--champagne-gold);
+}
+
+.applyCellValue {
+  font-family: var(--font-body), sans-serif;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--soft-charcoal);
+  margin: 0;
+}
+
+.sectionCharcoal .applyCellValue {
+  color: var(--bone-white);
+}
+
+@media (max-width: 1100px) {
+  .applyRow {
+    grid-template-columns: 60px 100px 1fr 1fr;
+    grid-template-areas:
+      "no thumb cat amount"
+      "no thumb how how"
+      "no thumb goal goal";
+    row-gap: 14px;
+  }
+  .applyRow > .applyNo { grid-area: no; }
+  .applyRow > .applyThumb { grid-area: thumb; }
+  .applyRow > .applyCell:nth-child(3) { grid-area: cat; }
+  .applyRow > .applyCell:nth-child(4) { grid-area: amount; }
+  .applyRow > .applyCell:nth-child(5) { grid-area: how; }
+  .applyRow > .applyCell:nth-child(6) { grid-area: goal; }
+}
+
+@media (max-width: 640px) {
+  .applyRow {
+    grid-template-columns: 48px 1fr;
+    grid-template-areas:
+      "no thumb"
+      "no cat"
+      ".  amount"
+      ".  how"
+      ".  goal";
+    row-gap: 12px;
+    column-gap: 16px;
+  }
+  .applyThumb {
+    width: 100%;
+    max-width: 160px;
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/* Spodní podpůrné karty */
+.applyCardGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 1100px) {
+  .applyCardGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .applyCardGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.applyCard {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 28px 24px;
+  background: var(--bone-white);
+  border-radius: var(--card-radius-lg);
+  border: 1px solid var(--color-border-soft, rgba(52, 58, 40, 0.1));
+}
+
+.applyCardList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.applyCardList li {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--color-border-soft, rgba(52, 58, 40, 0.08));
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.applyCardList li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.applyCardList strong {
+  font-family: var(--font-display), serif;
+  font-weight: 500;
+  color: var(--champagne-gold);
+  font-size: 14px;
+}
+
+.applyAmounts {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.applyAmounts li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--color-border-soft, rgba(52, 58, 40, 0.08));
+  font-size: 13px;
+  color: var(--soft-charcoal);
+}
+
+.applyAmounts li:last-child {
+  border-bottom: none;
+}
+
+.applyAmounts li > :last-child {
+  color: var(--color-text-muted);
+}
+
+.applyAvoidList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.applyAvoidList li {
+  display: grid;
+  grid-template-columns: 16px 1fr;
+  gap: 10px;
+  align-items: start;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--soft-charcoal);
+}
+
+.applyAvoidList svg {
+  color: var(--champagne-gold);
+  margin-top: 4px;
+}
+
+.applyQuickList {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.applyQuickItem h4 {
+  font-family: var(--font-display), serif;
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--soft-charcoal);
+  margin: 0 0 4px;
+}
+
+.applyQuickSeq {
+  font-family: var(--font-display), serif;
+  font-style: italic;
+  color: var(--champagne-gold);
+  font-size: 13px;
+  margin: 0 0 4px;
+  letter-spacing: 0.06em;
+}
+
+.applyQuickNote {
+  font-size: 12px;
+  line-height: 1.55;
+  color: var(--color-text-muted);
+  margin: 0;
+}

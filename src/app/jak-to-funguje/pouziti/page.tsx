@@ -1,50 +1,183 @@
 /**
  * J.OLI ORIGINS v3 — /jak-to-funguje/pouziti
  *
- * Sekce per brief 15:
- *  1. Hero
- *  2. Ranní postup
- *  3. Večerní postup
- *  4. První týden
- *  5. Nejčastější chyby
- *  6. CTA
+ * Detail aplikace ranního a večerního rituálu:
+ *  1. Hero + back link
+ *  2. Tabulka Ranní rituál (4 kroky)
+ *  3. Tabulka Večerní rituál (5 kroků — včetně No5)
+ *  4. První týden / Kolik produktu / Čemu se vyhnout / Když nemáte čas
+ *  5. CTA
  */
 
 import type { Metadata } from "next";
 import s from "../../styles.module.css";
 import { StickyChrome, Footer } from "../../Chrome";
-import { IconSun, IconMoon, IconCheck } from "../../icons";
+import {
+  IconSun,
+  IconMoon,
+  IconArrowRight,
+  IconClose,
+  IconCheck,
+} from "../../icons";
 
 export const metadata: Metadata = {
-  title: "Jak používat | J.OLI Origins",
+  title: "Detail aplikace | J.OLI Origins",
   description:
-    "Ráno čtyři kroky, večer čtyři kroky. Začněte menším množstvím a sledujte, jak se pleť cítí.",
+    "Krok za krokem aplikace ranního a večerního rituálu J.OLI Origins. Kolik produktu, jak nanést, jaký je cíl každého kroku.",
 };
 
-const morning = [
-  "No1 — Dvoufázová mycí emulze (čištění)",
-  "No2 — Bioaktivní tonikum (tonizace)",
-  "No3 — Collagel hydratační sérum (hydratace)",
-  "No4 denní — Vitaminové sérum + CoQ10 (ranní péče)",
-  "SPF — při pobytu venku doplňte ochranný krém",
+type Step = {
+  no: string;
+  category: string;
+  product: string;
+  img: string;
+  amount: string;
+  how: string;
+  goal: string;
+};
+
+const morningSteps: Step[] = [
+  {
+    no: "01",
+    category: "Čištění",
+    product: "No1 Dvoufázová mycí emulze",
+    img: "/v3/products/no1.jpg",
+    amount: "1–2 dávky",
+    how: "Protřepejte. Naneste na navlhčenou pleť, jemně masírujte a opláchněte vlažnou vodou.",
+    goal: "Odstranit nečistoty a připravit pleť na další kroky.",
+  },
+  {
+    no: "02",
+    category: "Tonizace",
+    product: "No2 Bioaktivní tonikum",
+    img: "/v3/products/no2.jpg",
+    amount: "3–5 stříknutí",
+    how: "Nastříkejte na pleť nebo do dlaní a jemně vklepejte. Nechte krátce vstřebat.",
+    goal: "Osvěžit pleť a připravit ji na hydratační sérum.",
+  },
+  {
+    no: "03",
+    category: "Hydratace",
+    product: "No3 Collagel hydratační sérum",
+    img: "/v3/products/no3.jpg",
+    amount: "2–3 dávky",
+    how: "Naneste na pleť, krk a dekolt. Jemně vklepejte a nechte krátce usadit.",
+    goal: "Dodat pleti hydrataci a podpořit komfort po celý den.",
+  },
+  {
+    no: "04",
+    category: "Denní péče",
+    product: "No4 Denní vitaminové sérum + CoQ10",
+    img: "/v3/products/no4-day.jpg",
+    amount: "2–3 kapky",
+    how: "Naneste na pleť po séru. Nechte krátce vstřebat a pokračujte SPF, pokud jdete ven.",
+    goal: "Antioxidanty a výživa pro svěží a vitální vzhled.",
+  },
 ];
 
-const evening = [
-  "No1 — Dvoufázová mycí emulze (čištění)",
-  "No2 — Bioaktivní tonikum (tonizace)",
-  "No3 — Collagel hydratační sérum (hydratace)",
-  "No4 noční — Regenerační sérum (večerní péče)",
+const eveningSteps: Step[] = [
+  {
+    no: "01",
+    category: "Čištění",
+    product: "No1 Dvoufázová mycí emulze",
+    img: "/v3/products/no1.jpg",
+    amount: "1–2 dávky",
+    how: "Protřepejte. Naneste na vlhkou pleť, jemně masírujte a opláchněte.",
+    goal: "Odstranit make-up, SPF a nečistoty dne.",
+  },
+  {
+    no: "02",
+    category: "Tonizace",
+    product: "No2 Bioaktivní tonikum",
+    img: "/v3/products/no2.jpg",
+    amount: "3–5 stříknutí",
+    how: "Nastříkejte na pleť nebo do dlaní a jemně vklepejte. Nechte krátce vstřebat.",
+    goal: "Zklidnit a připravit pleť na hydrataci.",
+  },
+  {
+    no: "03",
+    category: "Hydratace",
+    product: "No3 Collagel hydratační sérum",
+    img: "/v3/products/no3.jpg",
+    amount: "2–3 dávky",
+    how: "Naneste na pleť, krk a dekolt. Jemně vklepejte a nechte krátce usadit.",
+    goal: "Dodat pleti hloubkovou hydrataci.",
+  },
+  {
+    no: "05",
+    category: "Noční obnova",
+    product: "No5 Noční regenerační sérum",
+    img: "/v3/products/no4-night.jpg",
+    amount: "malé množství",
+    how: "Naneste jako poslední krok. Jemně vklepejte a nechte působit přes noc.",
+    goal: "Vyživit a podpořit regeneraci během spánku.",
+  },
 ];
 
-const mistakes = [
-  "Příliš mnoho produktu — stačí 2–3 kapky séra.",
-  "Vynechání No3 — bez hydratace pleť následný krok hůře přijme.",
-  "Záměna No4 denní a No4 noční.",
-  "Očekávání okamžité změny — longevity vyžaduje pravidelnost.",
-  "Nepoužití SPF po ranní péči při pobytu venku.",
+const firstWeek = [
+  { day: "1–2 dny", text: "Používejte základní pořadí s menším množstvím." },
+  { day: "3–5 dní", text: "Pokračujte pravidelně a sledujte komfort pleti." },
+  { day: "6–7 dní", text: "Upravte množství podle potřeb vaší pleti." },
 ];
 
-export default function HowToUsePage() {
+const amounts = [
+  { p: "No1 Čištění", a: "1–2 dávky" },
+  { p: "No2 Tonikum", a: "3–5 stříknutí" },
+  { p: "No3 Hydratace", a: "2–3 dávky" },
+  { p: "No4 Denní sérum", a: "2–3 kapky" },
+  { p: "No5 Noční sérum", a: "malé množství" },
+];
+
+const avoid = [
+  "Nanášení na úplně suchou pleť",
+  "Příliš mnoho produktu",
+  "Tření místo vklepávání",
+  "Vynechání hydratačního kroku",
+  "Používání horké vody",
+  "Očekávání okamžité proměny",
+];
+
+const quickRoutines = [
+  {
+    title: "Rychlé ráno",
+    seq: "01 → 02 → 03 → SPF",
+    note: "Základní kroky a SPF pro ochranu během dne.",
+  },
+  {
+    title: "Rychlý večer",
+    seq: "01 → 02 → 03 → 05",
+    note: "Čistý základ, hydratace a výživný závěr.",
+  },
+];
+
+function StepRow({ step }: { step: Step }) {
+  return (
+    <article className={s.applyRow}>
+      <div className={s.applyNo}>{step.no}</div>
+      <div className={s.applyThumb}>
+        <img src={step.img} alt={step.product} />
+      </div>
+      <div className={s.applyCell}>
+        <span className={s.applyCellLabel}>{step.category}</span>
+        <p className={s.applyCellValue}>{step.product}</p>
+      </div>
+      <div className={s.applyCell}>
+        <span className={s.applyCellLabel}>Kolik</span>
+        <p className={s.applyCellValue}>{step.amount}</p>
+      </div>
+      <div className={s.applyCell}>
+        <span className={s.applyCellLabel}>Jak aplikovat</span>
+        <p className={s.applyCellValue}>{step.how}</p>
+      </div>
+      <div className={s.applyCell}>
+        <span className={s.applyCellLabel}>Cíl</span>
+        <p className={s.applyCellValue}>{step.goal}</p>
+      </div>
+    </article>
+  );
+}
+
+export default function HowToUseDetailPage() {
   return (
     <>
       <StickyChrome active="jak-to-funguje" />
@@ -53,132 +186,110 @@ export default function HowToUsePage() {
       <section className={s.pageHero}>
         <div className={s.container}>
           <div className={s.pageHeroCentered}>
-            <span className={s.eyebrow}>Jak používat</span>
+            <span className={s.eyebrow}>Detail aplikace</span>
             <h1 className={s.heroTitle}>
-              Jak používat rituál ráno a večer
+              Krok za krokem: ráno a večer.
             </h1>
             <p className={s.lead}>
-              Ráno čtyři kroky. Večer čtyři kroky. Začněte menším množstvím
-              a sledujte, jak se pleť cítí.
+              Konkrétní množství, postup nanášení a cíl každého kroku. Začněte
+              menším množstvím a sledujte, jak se pleť cítí.
             </p>
+            <div style={{ marginTop: 12 }}>
+              <a className={s.btnSecondary} href="/jak-to-funguje">
+                ← Zpět na Jak to funguje
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* RÁNO */}
+      {/* RANNÍ RITUÁL */}
       <section className={`${s.section} ${s.sectionIvory}`}>
         <div className={s.container}>
-          <div className={s.twoCol}>
-            <div>
-              <span className={s.eyebrowGold}>
-                <IconSun size={14} style={{ marginRight: 6 }} /> Ranní postup
-              </span>
-              <h2 className={s.h2Display} style={{ marginTop: 16 }}>
-                Ráno čtyři kroky.
-              </h2>
-              <p
-                className={s.bodyCopy}
-                style={{ marginTop: 16 }}
-              >
-                Pořadí je dané. Nemusíte nic kombinovat.
-              </p>
-            </div>
-            <ol className={s.checkList}>
-              {morning.map((m, i) => (
-                <li key={m}>
-                  <span
-                    style={{
-                      fontFamily: "var(--font-display), serif",
-                      color: "var(--champagne-gold)",
-                      fontSize: 14,
-                      minWidth: 24,
-                    }}
-                  >
-                    0{i + 1}
-                  </span>
-                  <span>{m}</span>
-                </li>
-              ))}
-            </ol>
+          <div className={s.applyHeader}>
+            <span className={s.eyebrowGold}>
+              <IconSun size={14} style={{ marginRight: 6 }} /> Ranní rituál
+            </span>
+            <span className={s.applyFlow}>01 → 02 → 03 → 04</span>
           </div>
-        </div>
-      </section>
-
-      {/* VEČER */}
-      <section className={`${s.section} ${s.sectionBone}`}>
-        <div className={s.container}>
-          <div className={s.twoCol}>
-            <div>
-              <span className={s.eyebrowGold}>
-                <IconMoon size={14} style={{ marginRight: 6 }} /> Večerní postup
-              </span>
-              <h2 className={s.h2Display} style={{ marginTop: 16 }}>
-                Večer čtyři kroky.
-              </h2>
-              <p
-                className={s.bodyCopy}
-                style={{ marginTop: 16 }}
-              >
-                Pleť očistěte, hydratujte a uzavřete výživnějším nočním krokem.
-              </p>
-            </div>
-            <ol className={s.checkList}>
-              {evening.map((m, i) => (
-                <li key={m}>
-                  <span
-                    style={{
-                      fontFamily: "var(--font-display), serif",
-                      color: "var(--champagne-gold)",
-                      fontSize: 14,
-                      minWidth: 24,
-                    }}
-                  >
-                    0{i + 1}
-                  </span>
-                  <span>{m}</span>
-                </li>
-              ))}
-            </ol>
-          </div>
-        </div>
-      </section>
-
-      {/* PRVNÍ TÝDEN */}
-      <section className={`${s.section} ${s.sectionIvory}`}>
-        <div className={s.container}>
-          <div className={s.twoCol}>
-            <div>
-              <span className={s.eyebrow}>První týden</span>
-              <h2 className={s.h2Display} style={{ marginTop: 16 }}>
-                Méně je víc.
-              </h2>
-            </div>
-            <p className={s.bodyCopy}>
-              U prémiové péče neplatí, že více produktu znamená lepší výsledek.
-              První týden používejte menší množství a sledujte komfort pleti.
-              Postupně dávkování upravíte podle toho, jak se pleť cítí.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* CHYBY */}
-      <section className={`${s.section} ${s.sectionBone}`}>
-        <div className={s.container}>
-          <div className={s.sectionHeader}>
-            <span className={s.eyebrowGold}>Nejčastější chyby</span>
-            <h2 className={s.h2Display}>Pět drobností, na kterých to nejčastěji selže.</h2>
-          </div>
-          <ul
-            className={s.checkList}
-            style={{ maxWidth: 720, margin: "40px auto 0" }}
-          >
-            {mistakes.map((m) => (
-              <li key={m}>
-                <IconCheck size={16} /> {m}
-              </li>
+          <div className={s.applyTable}>
+            {morningSteps.map((step) => (
+              <StepRow key={"m-" + step.no} step={step} />
             ))}
-          </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* VEČERNÍ RITUÁL */}
+      <section className={`${s.section} ${s.sectionCharcoal}`}>
+        <div className={s.container}>
+          <div className={s.applyHeader}>
+            <span className={s.eyebrowGold}>
+              <IconMoon size={14} style={{ marginRight: 6 }} /> Večerní rituál
+            </span>
+            <span className={s.applyFlow}>01 → 02 → 03 → 05</span>
+          </div>
+          <div className={s.applyTable}>
+            {eveningSteps.map((step) => (
+              <StepRow key={"e-" + step.no} step={step} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* PODPŮRNÉ TABULKY */}
+      <section className={`${s.section} ${s.sectionIvory}`}>
+        <div className={s.container}>
+          <div className={s.applyCardGrid}>
+            <div className={s.applyCard}>
+              <span className={s.eyebrowGold}>První týden používání</span>
+              <ul className={s.applyCardList}>
+                {firstWeek.map((w) => (
+                  <li key={w.day}>
+                    <strong>{w.day}</strong>
+                    <span>{w.text}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className={s.applyCard}>
+              <span className={s.eyebrowGold}>Kolik produktu použít</span>
+              <ul className={s.applyAmounts}>
+                {amounts.map((a) => (
+                  <li key={a.p}>
+                    <span>{a.p}</span>
+                    <span>{a.a}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className={s.applyCard}>
+              <span className={s.eyebrowGold}>Čemu se vyhnout</span>
+              <ul className={s.applyAvoidList}>
+                {avoid.map((a) => (
+                  <li key={a}>
+                    <IconClose size={14} />
+                    <span>{a}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className={s.applyCard}>
+              <span className={s.eyebrowGold}>Když nemáte čas</span>
+              <div className={s.applyQuickList}>
+                {quickRoutines.map((q) => (
+                  <div key={q.title} className={s.applyQuickItem}>
+                    <h4>{q.title}</h4>
+                    <p className={s.applyQuickSeq}>{q.seq}</p>
+                    <p className={s.applyQuickNote}>{q.note}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -196,7 +307,7 @@ export default function HowToUsePage() {
             </p>
             <div className={s.finalCtaCtas}>
               <a className={s.btnPrimary} href="/produkty/travel-luxe-set">
-                Začít Travel Setem
+                Začít Travel Setem <IconArrowRight size={14} />
               </a>
               <a
                 className={`${s.btnSecondary} ${s.btnOnDark}`}
