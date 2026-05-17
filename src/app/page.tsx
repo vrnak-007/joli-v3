@@ -159,13 +159,13 @@ export default function HomePage() {
 
               <div className={s.heroBenefits}>
                 <span className={s.heroBenefit}>
-                  <IconTruck size={16} /> Doprava zdarma vždy
+                  <IconTruck size={14} /> Doprava zdarma vždy
                 </span>
                 <span className={s.heroBenefit}>
-                  <IconGift size={16} /> Dárek od 2 500 Kč
+                  <IconGift size={14} /> Dárek od 2 500 Kč
                 </span>
                 <span className={s.heroBenefit}>
-                  <IconBatch size={16} /> Malé šarže v Česku
+                  <IconLeaf size={14} /> Malé šarže v Česku
                 </span>
               </div>
             </div>
@@ -173,13 +173,8 @@ export default function HomePage() {
             <div className={s.heroVisual}>
               <span className={s.heroMonogram}>J·O</span>
               <img
-                src="/v3/hero/hp-hero-woman.png"
-                alt="Žena při ranním rituálu péče J.OLI Origins"
-              />
-              <IconBotanicalBranch
-                size={140}
-                className={s.heroBotanical}
-                aria-hidden="true"
+                src="/v3/hero/hp-hero-light.jpg"
+                alt="Žena s J.OLI produkty při ranním rituálu — světlá editorial scéna"
               />
             </div>
           </div>

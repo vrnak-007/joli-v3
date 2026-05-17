@@ -441,23 +441,25 @@
   }
 }
 
-/* ---------- Hero (HP) — kompaktní editorial spread, landscape image ---------- */
+/* ---------- Hero (HP) — luxusní editorial spread, portrét na výšku sekce ---------- */
 .hero {
-  padding: clamp(48px, 6vw, 88px) 0 clamp(48px, 6vw, 88px);
+  padding: clamp(40px, 5vw, 72px) 0 clamp(40px, 5vw, 72px);
   background: var(--bone-white);
   background-image: var(--warm-radial), var(--paper-grain);
   background-attachment: local;
   display: flex;
-  align-items: center;
+  align-items: stretch;
   position: relative;
+  min-height: clamp(560px, 70vh, 720px);
 }
 
 .heroGrid {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: clamp(32px, 5vw, 72px);
-  align-items: center;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 0;
+  align-items: stretch;
   width: 100%;
+  position: relative;
 }
 
 @media (max-width: 980px) {
@@ -465,13 +467,21 @@
     grid-template-columns: 1fr;
     gap: 36px;
   }
+  .hero {
+    min-height: auto;
+    align-items: center;
+  }
 }
 
 .heroCopy {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  max-width: 560px;
+  justify-content: center;
+  gap: 22px;
+  max-width: 540px;
+  padding-right: 12px;
+  position: relative;
+  z-index: 2;
 }
 
 .heroTitle {
@@ -505,33 +515,40 @@
   margin-top: 8px;
 }
 
-/* Hero benefits — proof strip pod celý hero */
+/* Hero benefits — horizontální inline proof strip na jeden řádek */
 .heroBenefits {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 0;
-  margin-top: 12px;
-  padding-top: 32px;
+  margin-top: 14px;
+  padding-top: 22px;
   border-top: 1px solid var(--color-border-soft);
+  width: 100%;
 }
 
 .heroBenefit {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  font-size: 13px;
+  gap: 8px;
+  font-size: 11px;
   color: var(--color-text-muted);
   letter-spacing: 0.04em;
-  padding: 0 24px;
+  padding: 0 18px;
   border-right: 1px solid var(--color-border-soft);
+  white-space: nowrap;
+  flex: 1;
+  justify-content: center;
 }
 
 .heroBenefit:first-child {
   padding-left: 0;
+  justify-content: flex-start;
 }
 
 .heroBenefit:last-child {
   border-right: none;
+  padding-right: 0;
+  justify-content: flex-end;
 }
 
 .heroBenefit svg {
@@ -539,14 +556,16 @@
   flex-shrink: 0;
 }
 
-@media (max-width: 600px) {
-  .heroBenefit {
-    border-right: none;
-    padding: 8px 0;
-    width: 100%;
+@media (max-width: 560px) {
+  .heroBenefits {
+    flex-wrap: wrap;
   }
-  .heroBenefit:first-child {
-    padding-top: 0;
+  .heroBenefit {
+    flex: 1 1 100%;
+    border-right: none;
+    padding: 6px 0;
+    justify-content: flex-start !important;
+    font-size: 11px;
   }
 }
 
@@ -554,47 +573,37 @@
   position: relative;
   border-radius: var(--card-radius-lg);
   overflow: hidden;
-  /* Landscape — fotka musí být vidět celá */
-  aspect-ratio: 16 / 11;
+  /* Fotka vyplňuje výšku celé hero sekce */
+  height: 100%;
+  min-height: clamp(480px, 60vh, 640px);
   background: var(--warm-ivory);
   box-shadow:
-    0 40px 80px -50px rgba(52, 58, 40, 0.3),
-    0 16px 32px -24px rgba(199, 155, 104, 0.18);
+    0 50px 90px -50px rgba(52, 58, 40, 0.32),
+    0 20px 40px -28px rgba(199, 155, 104, 0.2);
+  /* Bleed-out do levého (text) sloupce — image lehce zasahuje doleva */
+  margin-left: clamp(-60px, -4vw, -32px);
+  z-index: 1;
 }
 
 .heroVisual img {
   width: 100%;
   height: 100%;
-  /* contain — celá fotka vidět, fade do ivory pozadí kolem */
   object-fit: cover;
   object-position: center;
-  filter: saturate(1.02) contrast(1.02);
 }
 
-.heroVisual::after {
-  /* Soft fade z fotky do pozadí ze všech stran */
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background:
-    linear-gradient(
-      to top,
-      rgba(246, 243, 237, 0.5) 0%,
-      transparent 18%,
-      transparent 82%,
-      rgba(246, 243, 237, 0.5) 100%
-    ),
-    linear-gradient(
-      to right,
-      rgba(246, 243, 237, 0.35) 0%,
-      transparent 12%,
-      transparent 88%,
-      rgba(246, 243, 237, 0.35) 100%
-    );
+/* Žádný gradient overlay přes fotku — luxusní bleed bez viditelného přechodu */
+
+@media (max-width: 980px) {
+  .heroVisual {
+    margin-left: 0;
+    min-height: 420px;
+    height: auto;
+    aspect-ratio: 4 / 5;
+  }
 }
 
-/* Dekorativní botanický prvek vedle hero image */
+/* Botanický dekorativní prvek mimo image */
 .heroBotanical {
   position: absolute;
   bottom: -32px;
