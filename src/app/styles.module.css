@@ -456,7 +456,7 @@
 .heroGrid {
   display: grid;
   grid-template-columns: 1fr 1.15fr;
-  gap: 0;
+  gap: 28px;
   align-items: stretch;
   width: 100%;
   position: relative;
@@ -573,15 +573,15 @@
   position: relative;
   border-radius: var(--card-radius-lg);
   overflow: hidden;
-  /* Fotka vyplňuje výšku celé hero sekce */
+  /* Fotka vyplňuje výšku celé hero sekce, ale zůstává v pravém sloupci */
   height: 100%;
   min-height: clamp(480px, 60vh, 640px);
   background: var(--warm-ivory);
   box-shadow:
     0 50px 90px -50px rgba(52, 58, 40, 0.32),
     0 20px 40px -28px rgba(199, 155, 104, 0.2);
-  /* Bleed-out do levého (text) sloupce — image lehce zasahuje doleva */
-  margin-left: clamp(-60px, -4vw, -32px);
+  /* Bez bleed-outu — image se vejde do svého sloupce a nezasahuje do textu */
+  margin-left: 16px;
   z-index: 1;
 }
 
