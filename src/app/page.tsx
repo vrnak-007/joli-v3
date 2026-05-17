@@ -279,8 +279,24 @@ export default function HomePage() {
       </section>
 
       {/* ===== 3. JEDEN RITUÁL, DVĚ POŘADÍ ===== */}
-      <section className={`${s.section} ${s.sectionBone}`}>
-        <div className={s.container}>
+      <section
+        className={`${s.section} ${s.sectionBone}`}
+        style={{ position: "relative", overflow: "hidden" }}
+      >
+        <IconBotanicalLeaf
+          size={130}
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            top: 60,
+            right: -30,
+            color: "var(--botanical-olive)",
+            opacity: 0.13,
+            pointerEvents: "none",
+            transform: "rotate(25deg)",
+          }}
+        />
+        <div className={s.container} style={{ position: "relative", zIndex: 1 }}>
           <div className={s.sectionHeader}>
             <span className={s.eyebrowGold}>Rituál ráno a večer</span>
             <h2 className={s.h2Display}>
@@ -293,7 +309,7 @@ export default function HomePage() {
 
           <div className={s.ritualWrap}>
             {/* Morning */}
-            <div className={s.ritualBlock}>
+            <div className={`${s.ritualBlock} ${s.ritualBlockMorning}`}>
               <span className={s.ritualLabel}>
                 <IconSun size={14} style={{ marginRight: 6 }} /> Ráno
               </span>
@@ -318,7 +334,7 @@ export default function HomePage() {
             </div>
 
             {/* Evening */}
-            <div className={s.ritualBlock}>
+            <div className={`${s.ritualBlock} ${s.ritualBlockEvening}`}>
               <span className={s.ritualLabel}>
                 <IconMoon size={14} style={{ marginRight: 6 }} /> Večer
               </span>
@@ -507,8 +523,36 @@ export default function HomePage() {
       </section>
 
       {/* ===== 7. RECENZE ===== */}
-      <section className={`${s.section} ${s.sectionBone}`}>
-        <div className={s.container}>
+      <section
+        className={`${s.section} ${s.sectionBone}`}
+        style={{ position: "relative", overflow: "hidden" }}
+      >
+        <IconBotanicalBranch
+          size={180}
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            top: 30,
+            left: -40,
+            color: "var(--champagne-gold)",
+            opacity: 0.12,
+            pointerEvents: "none",
+            transform: "rotate(-18deg)",
+          }}
+        />
+        <IconDropletEditorial
+          size={50}
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            bottom: 60,
+            right: 60,
+            color: "var(--champagne-gold)",
+            opacity: 0.25,
+            pointerEvents: "none",
+          }}
+        />
+        <div className={s.container} style={{ position: "relative", zIndex: 1 }}>
           <div className={s.sectionHeader}>
             <span className={s.eyebrow}>Recenze</span>
             <h2 className={s.h2Display}>
@@ -553,8 +597,24 @@ export default function HomePage() {
       </div>
 
       {/* ===== 8. PŘÍBĚH ZNAČKY ===== */}
-      <section className={`${s.section} ${s.sectionIvory}`}>
-        <div className={s.container}>
+      <section
+        className={`${s.section} ${s.sectionIvory}`}
+        style={{ position: "relative", overflow: "hidden" }}
+      >
+        <IconBotanicalSprig
+          size={150}
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            bottom: 50,
+            left: -40,
+            color: "var(--botanical-olive)",
+            opacity: 0.16,
+            pointerEvents: "none",
+            transform: "rotate(15deg)",
+          }}
+        />
+        <div className={s.container} style={{ position: "relative", zIndex: 1 }}>
           <div className={s.founderGrid}>
             <div className={s.founderVisual}>
               <img

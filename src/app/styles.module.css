@@ -928,6 +928,66 @@
   flex-direction: column;
   gap: 32px;
   position: relative;
+  padding: 28px 24px;
+  border-radius: var(--card-radius-lg);
+  transition: background 0.3s ease;
+}
+
+/* Ráno — subtle warm ivory */
+.ritualBlockMorning {
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(237, 227, 214, 0.4) 0%,
+      rgba(237, 227, 214, 0.15) 100%
+    );
+}
+
+/* Večer — jemné uhlové / dark moss podbarvení pro evokaci večera */
+.ritualBlockEvening {
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(43, 43, 40, 0.92) 0%,
+      rgba(33, 38, 26, 0.95) 100%
+    );
+  color: var(--bone-white);
+}
+
+.ritualBlockEvening .ritualLabel {
+  color: var(--champagne-gold-soft);
+}
+
+.ritualBlockEvening .ritualLabel::after {
+  background: rgba(199, 155, 104, 0.32);
+}
+
+.ritualBlockEvening .ritualStepNo {
+  color: var(--champagne-gold-soft);
+}
+
+.ritualBlockEvening .ritualStepName {
+  color: rgba(246, 243, 237, 0.85);
+}
+
+.ritualBlockEvening .ritualStepName strong {
+  color: var(--bone-white);
+}
+
+.ritualBlockEvening .ritualNote {
+  color: rgba(246, 243, 237, 0.7);
+  border-left-color: var(--champagne-gold);
+}
+
+.ritualBlockEvening .ritualStep:not(:first-child)::before {
+  color: var(--champagne-gold);
+  opacity: 0.7;
+}
+
+/* Step thumbs zůstávají světlé i ve večerní sekci aby produkty byly viditelné */
+.ritualBlockEvening .ritualStepThumb {
+  background: var(--bone-white);
+  box-shadow: 0 12px 24px -16px rgba(0, 0, 0, 0.4);
 }
 
 .ritualLabel {
