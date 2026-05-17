@@ -32,6 +32,27 @@
   color: var(--bone-white);
 }
 
+.sectionCharcoal {
+  background: var(--soft-charcoal);
+  color: var(--bone-white);
+}
+.sectionCharcoal .h2Display,
+.sectionCharcoal .h3Display {
+  color: var(--bone-white);
+}
+.sectionCharcoal .lead,
+.sectionCharcoal .bodyCopy,
+.sectionCharcoal .smallText {
+  color: rgba(246, 243, 237, 0.78);
+}
+.sectionCharcoal .ritualStepName,
+.sectionCharcoal .ritualStepName strong {
+  color: var(--bone-white);
+}
+.sectionCharcoal .ritualStepThumb {
+  background: rgba(246, 243, 237, 0.92);
+}
+
 /* ---------- Typografie ---------- */
 .eyebrow {
   font-family: var(--font-body), sans-serif;
@@ -438,6 +459,14 @@
   }
   .headerInner {
     grid-template-columns: auto 1fr auto;
+    padding-left: 12px;
+    padding-right: 4px;
+  }
+}
+
+@media (max-width: 600px) {
+  .headerInner {
+    padding-left: 18px;
   }
 }
 
@@ -540,7 +569,7 @@
   top: 0;
   right: 0;
   left: 20%;
-  bottom: 88px;
+  bottom: 184px;
   background-image:
     /* Jemný fade z leva pro lepší čitelnost textu nad fotkou */
     linear-gradient(
@@ -648,6 +677,13 @@
   margin-top: 8px;
 }
 
+/* Hero CTAs — when placed under photo (homepage variant) */
+.heroCtasUnderPhoto {
+  position: relative;
+  z-index: 2;
+  margin-top: 36px;
+}
+
 /* Hero benefits — horizontální inline proof strip pod fotkou (mimo overlay) */
 .heroBenefits {
   position: relative;
@@ -655,7 +691,7 @@
   display: flex;
   flex-wrap: nowrap;
   gap: 0;
-  margin-top: 28px;
+  margin-top: 36px;
   padding-top: 22px;
   border-top: 1px solid var(--color-border-soft);
   width: 100%;
@@ -2993,7 +3029,7 @@
   justify-content: center;
   gap: 10px;
   width: 100%;
-  padding: 14px 20px;
+  padding: 14px 24px;
   background: var(--soft-charcoal, #14140f);
   color: var(--bone-white);
   font-family: var(--font-body), sans-serif;
@@ -3003,7 +3039,7 @@
   text-transform: uppercase;
   text-decoration: none;
   border: none;
-  border-radius: 2px;
+  border-radius: var(--button-radius, 999px);
   transition: background 0.25s ease, transform 0.2s ease;
 }
 

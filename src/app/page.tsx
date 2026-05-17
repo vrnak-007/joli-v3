@@ -139,26 +139,26 @@ export default function HomePage() {
                 Ráno víte, co použít. Večer víte, co použít. Pokud J.OLI
                 zkoušíte poprvé, začněte Travel Luxe Setem.
               </p>
-
-              <div className={s.heroCtas}>
-                <a
-                  className={s.btnPrimary}
-                  href="/produkty/travel-luxe-set"
-                >
-                  Začít Travel Setem
-                </a>
-                <a
-                  className={s.btnSecondary}
-                  href="/produkty/generation-perfect-complete"
-                >
-                  Chci celou sadu
-                </a>
-                <a className={s.btnTextLink} href="/poradit-s-vyberem">
-                  Chci poradit
-                </a>
-              </div>
             </div>
 
+          </div>
+
+          <div className={`${s.heroCtas} ${s.heroCtasUnderPhoto}`}>
+            <a
+              className={s.btnPrimary}
+              href="/produkty/travel-luxe-set"
+            >
+              Začít Travel Setem
+            </a>
+            <a
+              className={s.btnSecondary}
+              href="/produkty/generation-perfect-complete"
+            >
+              Chci celou sadu
+            </a>
+            <a className={s.btnTextLink} href="/poradit-s-vyberem">
+              Chci poradit
+            </a>
           </div>
 
           <div className={s.heroBenefits}>

@@ -179,7 +179,7 @@ export default function HowItWorksPage() {
       </section>
 
       {/* ===== VEČER ===== */}
-      <section className={`${s.section} ${s.sectionIvory}`}>
+      <section className={`${s.section} ${s.sectionCharcoal}`}>
         <div className={s.container}>
           <div className={s.sectionHeader}>
             <span className={s.eyebrowGold}>

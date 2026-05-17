@@ -95,8 +95,8 @@ const businessFlow = [
 const businessBenefits = [
   {
     Icon: IconPeopleHeart,
-    title: "Komise nebo nákup",
-    text: "Zvolte si model, který vám vyhovuje. Produkty můžete mít na komisi nebo za zvýhodněné partnerské ceny.",
+    title: "Nákup produktů",
+    text: "Zvolte si model, který vám vyhovuje. Produkty můžete mít za zvýhodněné partnerské ceny, nebo výhodné rabaty.",
   },
   {
     Icon: IconDiscount,
