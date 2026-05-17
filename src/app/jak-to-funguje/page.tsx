@@ -82,22 +82,33 @@ export default function HowItWorksPage() {
       {/* ===== HERO ===== */}
       <section className={s.pageHero}>
         <div className={s.container}>
-          <div className={s.pageHeroCentered}>
-            <span className={s.eyebrow}>Longevity rituál</span>
-            <h1 className={s.heroTitle}>
-              Jak funguje longevity rituál J.OLI
-            </h1>
-            <p className={s.lead}>
-              Longevity neznamená složitější péči. Znamená pravidelnost,
-              jasné pořadí a produkty, které do sebe zapadají.
-            </p>
-            <div className={s.heroLineCtas}>
-              <a className={s.btnPrimary} href="/produkty/travel-luxe-set">
-                Začít Travel Setem
-              </a>
-              <a className={s.btnSecondary} href="/poradit-s-vyberem">
-                Chci poradit
-              </a>
+          <div className={s.pageHeroSplit}>
+            <div className={s.setCopy}>
+              <span className={s.eyebrow}>Longevity rituál</span>
+              <h1 className={s.heroTitle}>
+                Jak funguje longevity rituál J.OLI
+              </h1>
+              <p className={s.lead}>
+                Longevity neznamená složitější péči. Znamená pravidelnost,
+                jasné pořadí a produkty, které do sebe zapadají.
+              </p>
+              <div
+                className={`${s.heroLineCtas} ${s.heroLineCtasLeft}`}
+                style={{ marginTop: 8 }}
+              >
+                <a className={s.btnPrimary} href="/produkty/travel-luxe-set">
+                  Začít Travel Setem
+                </a>
+                <a className={s.btnSecondary} href="/poradit-s-vyberem">
+                  Chci poradit
+                </a>
+              </div>
+            </div>
+            <div className={s.setVisual}>
+              <img
+                src="/v3/hero/jtf-hero.jpg"
+                alt="Večerní longevity rituál J.OLI Origins"
+              />
             </div>
           </div>
         </div>

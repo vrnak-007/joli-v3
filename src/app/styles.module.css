@@ -1700,7 +1700,20 @@
 /* ---------- Page hero (sekundární stránky) ---------- */
 .pageHero {
   padding: clamp(56px, 7vw, 110px) 0 clamp(40px, 5vw, 70px);
-  background: var(--bone-white);
+  background-color: var(--bone-white);
+  /* Jemně prosvítající editorial fotka v pozadí (téměř neviditelná) */
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(246, 243, 237, 0.94) 0%,
+      rgba(246, 243, 237, 0.9) 50%,
+      rgba(246, 243, 237, 0.92) 100%
+    ),
+    url("/v3/hero/hp-hero-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
 }
 
 .pageHeroCentered {
