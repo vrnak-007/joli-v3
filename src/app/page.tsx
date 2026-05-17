@@ -157,20 +157,20 @@ export default function HomePage() {
                   Chci poradit
                 </a>
               </div>
-
-              <div className={s.heroBenefits}>
-                <span className={s.heroBenefit}>
-                  <IconTruck size={14} /> Doprava zdarma vždy
-                </span>
-                <span className={s.heroBenefit}>
-                  <IconGift size={14} /> Dárek od 2 500 Kč
-                </span>
-                <span className={s.heroBenefit}>
-                  <IconLeaf size={14} /> Malé šarže v Česku
-                </span>
-              </div>
             </div>
 
+          </div>
+
+          <div className={s.heroBenefits}>
+            <span className={s.heroBenefit}>
+              <IconTruck size={14} /> Doprava zdarma vždy
+            </span>
+            <span className={s.heroBenefit}>
+              <IconGift size={14} /> Dárek od 2 500 Kč
+            </span>
+            <span className={s.heroBenefit}>
+              <IconLeaf size={14} /> Malé šarže v Česku
+            </span>
           </div>
         </div>
       </section>
