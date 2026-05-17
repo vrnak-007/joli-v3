@@ -1,22 +1,25 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Manrope } from "next/font/google";
+import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
-const cormorant = Cormorant_Garamond({
+const playfair = Playfair_Display({
   variable: "--font-display",
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
   weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
-const manrope = Manrope({
+const jakarta = Plus_Jakarta_Sans({
   variable: "--font-body",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  subsets: ["latin", "latin-ext"],
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "J.Oli Origins | Generation Perfect",
-  description: "Luxusni digitalni butik J.Oli Origins",
+  title: "J.OLI ORIGINS | Longevity rituál pro pleť",
+  description:
+    "Pět kroků pro dlouhověkost pleti. Ranní a večerní longevity rituál, který dává péči o pleť jasný řád. Začněte Travel Luxe Setem.",
 };
 
 export default function RootLayout({
@@ -26,7 +29,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="cs">
-      <body className={`${cormorant.variable} ${manrope.variable}`}>{children}</body>
+      <body className={`${playfair.variable} ${jakarta.variable}`}>
+        {children}
+      </body>
     </html>
   );
 }

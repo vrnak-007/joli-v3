@@ -345,14 +345,14 @@ export const articleDetails: Record<string, ArticleDetail> = {
           { number: "01", phase: "Čištění",     text: "No1 Dvoufázová mycí emulze — důkladněji odstraní SPF, make-up a nečistoty dne." },
           { number: "02", phase: "Tonizace",    text: "No2 Bioaktivní tonikum — zklidní pleť po čištění a připraví ji na výživnější péči." },
           { number: "03", phase: "Hydratace",   text: "No3 Collagel hydratační sérum — stejný hydratační mezikrok jako ráno." },
-          { number: "05", phase: "Noční obnova", text: "No5 Noční regenerační sérum — výživná textura, která uzavírá rituál." },
+          { number: "05", phase: "Noční obnova", text: "No4 noční Regenerační sérum — výživná textura, která uzavírá rituál." },
         ],
       },
 
       { type: "heading", id: "kolik-produktu", text: "Kolik produktu skutečně stačí" },
       {
         type: "paragraph",
-        text: "Méně produktu při pravidelném používání funguje lépe než větší množství nárazově. Doporučená dávkování: No1 — 1–2 dávky, No2 — 3–5 stříknutí, No3 — 2–3 kapky, No4 — 2–3 kapky, No5 — množství velikosti hrášku. Při tomto dávkování sada vystačí přibližně 92 dní (cca 98 Kč na den).",
+        text: "Méně produktu při pravidelném používání funguje lépe než větší množství nárazově. Doporučená dávkování: No1 — 1–2 dávky, No2 — 3–5 stříknutí, No3 — 2–3 kapky, No4 — 2–3 kapky, No4 noční — množství velikosti hrášku.",
       },
 
       { type: "heading", id: "prvni-tyden", text: "Co dělat první týden" },
@@ -366,7 +366,7 @@ export const articleDetails: Record<string, ArticleDetail> = {
       { type: "heading", id: "nejcastejsi-chyby", text: "Nejčastější chyby" },
       {
         type: "paragraph",
-        text: "Příliš mnoho produktu — méně se vstřebá. Vrstvení na zcela suchou pleť — další krok pleť spíš zatíží. Vynechání No3 — bez hydratační vrstvy je následující péče pro pleť intenzivnější, než potřebuje. Používání No5 ráno místo večer — noční výživná textura ráno není vhodná. Spoléhání se na No4 jako ochranu před sluncem — No4 obsahuje antioxidanty, ale nenahrazuje SPF.",
+        text: "Příliš mnoho produktu — méně se vstřebá. Vrstvení na zcela suchou pleť — další krok pleť spíš zatíží. Vynechání No3 — bez hydratační vrstvy je následující péče pro pleť intenzivnější, než potřebuje. Používání No4 nočního ráno místo večer — noční výživná textura ráno není vhodná. Spoléhání se na No4 jako ochranu před sluncem — No4 obsahuje antioxidanty, ale nenahrazuje SPF.",
       },
     ],
     relatedSlugs: [
@@ -386,7 +386,7 @@ export const articleDetails: Record<string, ArticleDetail> = {
     displayTags: ["Bakuchiol", "Noční péče", "Ingredience"],
     summaryBullets: [
       "co bakuchiol v kosmetice znamená",
-      "proč ho J.Oli zařadilo do No5 a do večerního kroku",
+      "proč ho J.Oli zařadilo do No4 nočního a do večerního kroku",
       "v čem se liší od retinolu",
       "jak začít, pokud máte citlivější pleť",
     ],
@@ -394,16 +394,16 @@ export const articleDetails: Record<string, ArticleDetail> = {
       { id: "co-je-bakuchiol", label: "Co je bakuchiol" },
       { id: "proc-vecer", label: "Proč patří spíš večer" },
       { id: "bakuchiol-vs-retinol", label: "Bakuchiol vs. retinol" },
-      { id: "no5", label: "Bakuchiol v No5" },
+      { id: "no4-nocni", label: "Bakuchiol v No4 nočním" },
       { id: "jak-zacit", label: "Jak začít u citlivější pleti" },
       { id: "s-cim-nekombinovat", label: "S čím ho nekombinovat" },
     ],
     inlineCtas: [
       {
-        id: "cta-no5",
+        id: "cta-no4-nocni",
         title: "Vyzkoušet bakuchiol v noční péči",
-        text: "No5 Noční regenerační sérum používá bakuchiol jako jednu z klíčových látek. Lze ho vyzkoušet samostatně i jako součást Travel Luxe Setu.",
-        ctaLabel: "Zobrazit No5 / Travel Luxe Set",
+        text: "No4 noční Regenerační sérum používá bakuchiol jako jednu z klíčových látek. Lze ho vyzkoušet samostatně i jako součást Travel Luxe Setu.",
+        ctaLabel: "Zobrazit Travel Luxe Set",
         href: "/produkty/travel-luxe-set",
         image: "/assets/joliorigins/zurnal/bakuchiol.png",
       },
@@ -427,24 +427,24 @@ export const articleDetails: Record<string, ArticleDetail> = {
         text: "Retinol je dlouhodobý standard pro péči o vzhled pleti, ale často způsobuje období adaptace: zarudnutí, suchost, citlivost. Bakuchiol bývá pro pleť přijatelnější — bez nutnosti pomalého zaváděcího protokolu a obvykle bez výrazného podráždění. Pro citlivější pleť nebo pro ženy, které retinol nezvládají, je proto často vhodnější volbou.",
       },
 
-      { type: "inlineCta", ctaId: "cta-no5" },
+      { type: "inlineCta", ctaId: "cta-no4-nocni" },
 
-      { type: "heading", id: "no5", text: "Bakuchiol v No5 Nočním regeneračním séru" },
+      { type: "heading", id: "no4-nocni", text: "Bakuchiol v No4 nočním Regeneračním séru" },
       {
         type: "paragraph",
-        text: "No5 kombinuje bakuchiol s peptidy a vybranými minerály. Cílem není rychlá viditelná změna, ale podpora pleti, aby ráno působila odpočatěji a komfortněji. Bakuchiol je v No5 zařazený do výživné večerní textury, takže pleť dostává aktivní látku i příjemný závěr rituálu.",
+        text: "No4 noční kombinuje bakuchiol s peptidy a vybranými minerály. Cílem není rychlá viditelná změna, ale podpora pleti, aby ráno působila odpočatěji a komfortněji. Bakuchiol je v No4 nočním zařazený do výživné večerní textury, takže pleť dostává aktivní látku i příjemný závěr rituálu.",
       },
 
       { type: "heading", id: "jak-zacit", text: "Jak začít u citlivější pleti" },
       {
         type: "paragraph",
-        text: "Pokud máte citlivější pleť nebo s aktivními látkami teprve začínáte, doporučujeme zavádět No5 postupně: první týden 2–3× za týden, místo každý den. Sledujte, jak pleť reaguje. Pokud po týdnu vše sedí, přejděte na každodenní použití. Stačí množství velikosti hrášku — více produktu neznamená rychlejší výsledek.",
+        text: "Pokud máte citlivější pleť nebo s aktivními látkami teprve začínáte, doporučujeme zavádět No4 noční postupně: první týden 2–3× za týden, místo každý den. Sledujte, jak pleť reaguje. Pokud po týdnu vše sedí, přejděte na každodenní použití. Stačí množství velikosti hrášku — více produktu neznamená rychlejší výsledek.",
       },
 
       { type: "heading", id: "s-cim-nekombinovat", text: "S čím ho nekombinovat" },
       {
         type: "paragraph",
-        text: "V den, kdy je pleť aktuálně podrážděná (po dlouhém pobytu na slunci, po peelingu, při kožní reakci), No5 ten večer vynechte a místo něj použijte jen No3. Bakuchiol není agresivní, ale podrážděnou pleť není potřeba zbytečně dráždit dalšími aktivními látkami. Pokud používáte koncentrovaný retinoid od jiné značky, nedoporučujeme ho v jeden večer kombinovat s No5 — vyberte si jednu aktivní noční péči.",
+        text: "V den, kdy je pleť aktuálně podrážděná (po dlouhém pobytu na slunci, po peelingu, při kožní reakci), No4 noční ten večer vynechte a místo něj použijte jen No3. Bakuchiol není agresivní, ale podrážděnou pleť není potřeba zbytečně dráždit dalšími aktivními látkami. Pokud používáte koncentrovaný retinoid od jiné značky, nedoporučujeme ho v jeden večer kombinovat s No4 nočním — vyberte si jednu aktivní noční péči.",
       },
     ],
     relatedSlugs: [
@@ -465,7 +465,7 @@ export const articleDetails: Record<string, ArticleDetail> = {
     summaryBullets: [
       "kolik produktu na jednu aplikaci skutečně potřebujete",
       "proč více produktu neznamená lepší výsledek",
-      "jak tím sada vydrží déle (cca 92 dní)",
+      "jak tím sada vydrží déle",
       "kdy začít opatrněji a kdy si dovolit více",
     ],
     tableOfContents: [
@@ -497,7 +497,7 @@ export const articleDetails: Record<string, ArticleDetail> = {
           { number: "02", phase: "No2 tonikum",     text: "3–5 stříknutí na pleť nebo do dlaní, jemně vklepat." },
           { number: "03", phase: "No3 hydratace",   text: "2–3 kapky / dávky pumpičky. Nanést na pleť, krk a dekolt." },
           { number: "04", phase: "No4 denní péče",  text: "2–3 kapky. Vetřít po No3, nechat krátce vstřebat a doplnit SPF, pokud jdete ven." },
-          { number: "05", phase: "No5 noční obnova", text: "Množství velikosti hrášku. Zahřát mezi prsty a jemně vtlačit do pleti." },
+          { number: "05", phase: "No4 noční obnova", text: "Množství velikosti hrášku. Zahřát mezi prsty a jemně vtlačit do pleti." },
         ],
       },
 
@@ -512,13 +512,13 @@ export const articleDetails: Record<string, ArticleDetail> = {
       { type: "heading", id: "ekonomika", text: "Ekonomika rituálu" },
       {
         type: "paragraph",
-        text: "Při doporučeném dávkování vystačí Generation Perfect Ritual přibližně 92 dní. To znamená cca 98 Kč na den za kompletní ranní i večerní péči, která pokrývá čištění, tonizaci, hydrataci, denní aktivní péči a noční obnovu. Pokud si produkty pořídíte jednotlivě, zaplatíte 12 750 Kč. Sada stojí 9 000 Kč — ušetříte 3 750 Kč a získáte všech pět kroků navržených jako jeden systém.",
+        text: "Pokud si produkty pořídíte jednotlivě, zaplatíte 12 750 Kč. Sada stojí 9 000 Kč — ušetříte 3 750 Kč a získáte všech pět kroků navržených jako jeden systém.",
       },
 
       { type: "heading", id: "kdy-zacit-opatrne", text: "Kdy začít opatrněji" },
       {
         type: "paragraph",
-        text: "Pokud máte citlivější pleť nebo s prémiovou péčí teprve začínáte, doporučujeme první týden držet dávkování na spodní hranici (1 dávka No1, 3 stříknutí No2, 2 kapky No3, 2 kapky No4, malé množství No5 velikosti čočky). Sledujte komfort pleti. Druhý týden můžete jemně upravit. Travel Luxe Set je ideální způsob, jak najít své osobní dávkování — všech pět kroků v menším formátu, cca 21 dní.",
+        text: "Pokud máte citlivější pleť nebo s prémiovou péčí teprve začínáte, doporučujeme první týden držet dávkování na spodní hranici (1 dávka No1, 3 stříknutí No2, 2 kapky No3, 2 kapky No4, malé množství No4 nočního velikosti čočky). Sledujte komfort pleti. Druhý týden můžete jemně upravit. Travel Luxe Set je ideální způsob, jak najít své osobní dávkování — všech pět kroků v menším formátu, cca 21 dní.",
       },
     ],
     relatedSlugs: [
@@ -528,7 +528,7 @@ export const articleDetails: Record<string, ArticleDetail> = {
     ],
     seoTitle: "Kolik produktu opravdu stačí | Žurnál J.Oli Origins",
     seoDescription:
-      "Doporučené dávkování pro Generation Perfect Ritual. Proč více produktu neznamená lepší výsledek a jak tím sada vystačí přibližně 92 dní (cca 98 Kč/den).",
+      "Doporučené dávkování pro Generation Perfect Ritual. Proč více produktu neznamená lepší výsledek.",
   },
 };
 

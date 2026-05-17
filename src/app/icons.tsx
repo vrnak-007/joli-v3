@@ -547,3 +547,102 @@ export const IconHeart = ({ size, ...p }: IconProps) => (
     <path d="M12 21s-7-5-9-10c-1-3 1-6 4-6 2 0 4 1 5 3 1-2 3-3 5-3 3 0 5 3 4 6-2 5-9 10-9 10z" />
   </svg>
 );
+
+/* ============================================================
+ * v3 — botanické dekorativní SVG (větev, list, kapka, větvička)
+ * ============================================================ */
+
+export const IconBotanicalBranch = ({ size = 80, ...p }: IconProps) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 80 80"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth={1}
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    {...p}
+  >
+    <path d="M40 8 Q 40 30 40 72" />
+    <path d="M40 18 Q 28 22 22 32 Q 28 30 38 30" />
+    <path d="M40 28 Q 52 30 58 40 Q 52 38 42 40" />
+    <path d="M40 40 Q 26 44 18 56 Q 28 52 38 52" />
+    <path d="M40 50 Q 54 52 62 62 Q 52 60 42 60" />
+    <ellipse cx="40" cy="8" rx="2" ry="3" />
+  </svg>
+);
+
+export const IconBotanicalLeaf = ({ size = 60, ...p }: IconProps) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 60 60"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth={1}
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    {...p}
+  >
+    <path d="M10 50 Q 30 10 50 28 Q 40 48 10 50 Z" />
+    <path d="M14 46 Q 30 28 46 32" />
+  </svg>
+);
+
+export const IconBotanicalSprig = ({ size = 100, ...p }: IconProps) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 100 100"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth={0.9}
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    {...p}
+  >
+    <path d="M50 6 Q 50 50 50 94" />
+    <ellipse cx="38" cy="22" rx="9" ry="3" transform="rotate(-30 38 22)" />
+    <ellipse cx="62" cy="32" rx="9" ry="3" transform="rotate(30 62 32)" />
+    <ellipse cx="36" cy="44" rx="11" ry="3" transform="rotate(-25 36 44)" />
+    <ellipse cx="64" cy="56" rx="11" ry="3" transform="rotate(25 64 56)" />
+    <ellipse cx="38" cy="68" rx="10" ry="3" transform="rotate(-28 38 68)" />
+    <ellipse cx="62" cy="80" rx="10" ry="3" transform="rotate(28 62 80)" />
+  </svg>
+);
+
+export const IconDropletEditorial = ({ size = 40, ...p }: IconProps) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 40 40"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth={1}
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    {...p}
+  >
+    <path d="M20 4 Q 28 18 28 24 A 8 8 0 1 1 12 24 Q 12 18 20 4 Z" />
+    <path d="M16 22 Q 18 26 22 26" />
+  </svg>
+);
+
+export const IconCircleMonogram = ({ size = 60, ...p }: IconProps) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 60 60"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth={1}
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    {...p}
+  >
+    <circle cx="30" cy="30" r="28" />
+    <path d="M22 22 L 22 36 Q 22 40 26 40" strokeWidth={1.2} />
+    <path d="M30 20 L 30 40 M30 20 L 38 40 M38 20 L 38 40" strokeWidth={1.2} />
+  </svg>
+);

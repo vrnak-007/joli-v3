@@ -1,28 +1,73 @@
 @import "tailwindcss";
 
+/* ============================================================
+ * J.OLI ORIGINS v3 — Botanical Prestige / Quiet Luxury tokens
+ * ============================================================ */
 :root {
-  --color-bg: #0b0a08;
-  --color-bg-soft: #11100d;
-  --color-card: #14110d;
-  --color-card-alt: #18130f;
-  --color-cream: #f4ece0;
-  --color-text: #f4ece0;
-  --color-muted: #b9aa99;
-  --color-muted-dark: #8c7d6e;
-  --color-accent: #c8a36b;
-  --color-accent-soft: #d8b98b;
-  --color-button-light: #e8d3b5;
-  --color-button-dark-text: #11100d;
-  --color-border: rgba(200, 163, 107, 0.32);
-  --color-border-soft: rgba(200, 163, 107, 0.2);
-  --container-max: 1320px;
-  --container-padding-desktop: 56px;
-  --grid-gap: 14px;
-  --section-gap: 42px;
-  --button-height: 44px;
-  --button-radius: 0px;
-  --card-radius: 0px;
+  /* Botanical Prestige palette */
+  --bone-white: #F6F3ED;
+  --warm-ivory: #EDE3D6;
+  --warm-ivory-soft: #F2EADC; /* mid-step pro jemné gradienty */
+  --botanical-olive: #6B6F4D;
+  --botanical-olive-soft: #8A8E6D;
+  --dark-moss: #343A28;
+  --dark-moss-deep: #21261A;
+  --champagne-gold: #C79B68;
+  --champagne-gold-soft: #D9B987;
+  --mineral-taupe: #A69E92;
+  --mineral-taupe-soft: #C3BCB1;
+  --soft-charcoal: #2B2B28;
+
+  /* Semantic aliases */
+  --color-bg: var(--bone-white);
+  --color-bg-alt: var(--warm-ivory);
+  --color-bg-soft: var(--warm-ivory-soft);
+  --color-text: var(--soft-charcoal);
+  --color-text-muted: #5F5C55;
+  --color-text-subtle: #807A6F;
+  --color-accent: var(--botanical-olive);
+  --color-accent-warm: var(--champagne-gold);
+  --color-cta: var(--dark-moss);
+  --color-cta-text: var(--bone-white);
+  --color-border: rgba(166, 158, 146, 0.32);
+  --color-border-soft: rgba(166, 158, 146, 0.18);
+  --color-border-gold: rgba(199, 155, 104, 0.4);
+
+  /* Footer / dark mode reverse */
+  --color-dark-bg: var(--dark-moss-deep);
+  --color-dark-text: var(--bone-white);
+  --color-dark-muted: rgba(246, 243, 237, 0.65);
+
+  /* Layout */
+  --container-max: 1040px;
+  --container-padding: clamp(16px, 3vw, 44px);
+  --grid-gap: 20px;
+  --section-gap: clamp(52px, 6vw, 84px);
+  --section-gap-tight: clamp(36px, 4vw, 60px);
+
+  /* UI primitives */
+  --button-height: 42px;
+  --button-radius: 999px;
+  --button-radius-square: 4px;
+  --card-radius: 10px;
+  --card-radius-lg: 14px;
   --border-width: 1px;
+
+  /* Typografie */
+  --leading-display: 0.98;
+  --leading-body: 1.65;
+  --tracking-label: 0.18em;
+  --tracking-eyebrow: 0.24em;
+
+  /* Editorial textures */
+  --paper-grain:
+    radial-gradient(rgba(199, 155, 104, 0.04) 1px, transparent 1px) 0 0 / 24px 24px,
+    radial-gradient(rgba(166, 158, 146, 0.05) 1px, transparent 1px) 12px 12px / 24px 24px;
+  --warm-radial: radial-gradient(
+    ellipse at 25% 0%,
+    rgba(199, 155, 104, 0.07) 0%,
+    transparent 55%
+  );
 }
 
 * {
@@ -35,11 +80,20 @@ body {
   padding: 0;
 }
 
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
 body {
   min-height: 100vh;
   background: var(--color-bg);
   color: var(--color-text);
-  font-family: var(--font-body), sans-serif;
+  font-family: var(--font-body), "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  line-height: var(--leading-body);
+  font-weight: 400;
 }
 
 a {
@@ -47,7 +101,33 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  color: var(--botanical-olive);
+}
+
 button,
-input {
+input,
+select,
+textarea {
   font: inherit;
+  color: inherit;
+}
+
+img,
+picture,
+video,
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+::selection {
+  background: var(--dark-moss);
+  color: var(--bone-white);
+}
+
+/* Display font helper class (lze používat přímo v CSS Modulech přes :global() nebo var) */
+.display {
+  font-family: var(--font-display), "Times New Roman", serif;
 }
