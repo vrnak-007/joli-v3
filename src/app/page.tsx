@@ -170,13 +170,6 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className={s.heroVisual}>
-              <span className={s.heroMonogram}>J·O</span>
-              <img
-                src="/v3/hero/hp-hero-light.jpg"
-                alt="Žena s J.OLI produkty při ranním rituálu — světlá editorial scéna"
-              />
-            </div>
           </div>
         </div>
       </section>
